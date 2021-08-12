@@ -5,11 +5,9 @@ from baha import Baha, Baha_auto_signin
 from waitress import serve
 from baha_auto_signin_timer import Baha_auto_signin_timer
 import os
-import multiprocessing
+import threading
 import time
 import webbrowser
-
-
 
 class Server:
     def __init__(self) -> None:
@@ -23,27 +21,12 @@ class Server:
         self.app.config['TEMPLATES_AUTO_RELOAD'] = True
         return None
 
-    def run_server(self) -> None:
-        global data_processor
-        port = data_processor.get_port()
-        data_processor.save_port_status(False)
-        print("server port:", port)
-        serve(self.app, host="0.0.0.0", port=port)
+    def run_server_forever(self) -> None:
+        while True:
+            # serve(self.app, host="0.0.0.0", port=data_processor.get_port())
+            self.app.run(host='0.0.0.0', threaded=True, port=data_processor.get_port())
         return None
 
-    def run_server_by_threading_forever(self):
-        proc = multiprocessing.Process(target=self.run_server)
-        proc.start()
-        while True:
-            global data_processor
-            if data_processor.get_restart_status() is True:
-                print("restart server")
-                proc.terminate()
-                print("after Termination")
-                proc = multiprocessing.Process(target=self.run_server)
-                proc.start()
-                data_processor.set_restart_status(False)
-            time.sleep(1)
 
 
 
@@ -62,7 +45,10 @@ def setting():
     if request.method == 'POST':
         if "port" in request.form:
             data_processor.save_port(request.form["port"])
-            data_processor.set_restart_status(True)
+            # data_processor.set_restart_status(True)
+            shutdown_server()
+            print("port change to", data_processor.get_port())
+            return redirect("http://localhost:"+str(data_processor.get_port()), code=302)
         else:
             set_setting_json(request.form)
     return render_template('setting.html')
@@ -102,17 +88,24 @@ def set_setting_json(form):
     baha_auto_signin.run()
     return
 
-
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
 
 
 
 if __name__ == '__main__':
-    print("open web")
-    webbrowser.open('http://localhost:'+str(data_processor.get_port()) )
     if not data_processor.is_port_in_use():
         print("run server")
-        multiprocessing.Process(target=server.run_server_by_threading_forever).start()
+        threading.Thread(target=server.run_server_forever).start()
+        print("open web")
+        webbrowser.open('http://localhost:'+str(data_processor.get_port()) )
         baha_auto_signin.run()
         while True:
             baha_auto_signin_timer.countdown_until_time_over()
             baha_auto_signin.run()
+    else: 
+        print("open web")
+        webbrowser.open('http://localhost:'+str(data_processor.get_port()) )
