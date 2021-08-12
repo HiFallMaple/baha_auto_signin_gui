@@ -1,6 +1,6 @@
 import pickle
 import requests
-import os
+from pathlib import Path
 
 class Session:
     def __init__(self) -> None:
@@ -8,7 +8,7 @@ class Session:
 
     def load_session(self, file_name) -> requests.Session or None:
         # Load/Create the session 
-        if os.path.isfile('{}.pkl'.format(file_name)) is True:
+        if Path('{}.pkl'.format(file_name)).is_file() is True:
             with open('{}.pkl'.format(file_name), 'rb') as f: 
                 reqs = pickle.load(f)
                 return reqs

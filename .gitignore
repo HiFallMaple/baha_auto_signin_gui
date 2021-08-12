@@ -1,5 +1,8 @@
+build/
 baha_auto_signin_gui_venv/
 __pycache__/
+dist/
 accounts.json
 status.json
 *.pkl
+*.spec

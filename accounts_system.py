@@ -1,6 +1,8 @@
 import json
 import codecs
 import os
+from pathlib import Path
+
 
 class Accounts_system:
     def __init__(self) -> None:
@@ -10,13 +12,13 @@ class Accounts_system:
         pass
 
     def get_accounts(self) -> list or False:
-        if os.path.isfile(self.ACCOUNTS_JSON_FILE_NAME) is True:
+        if Path(self.ACCOUNTS_JSON_FILE_NAME).is_file() is True:
             return json.load(open(self.ACCOUNTS_JSON_FILE_NAME,))
         else: 
             return False
 
     def get_status(self) -> list or False:
-        if os.path.isfile(self.STATUS_JSON_FILE_NAME) is True:
+        if Path(self.STATUS_JSON_FILE_NAME).is_file() is True:
             return json.load(open(self.STATUS_JSON_FILE_NAME,))
         else: 
             return False

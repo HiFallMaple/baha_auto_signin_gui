@@ -1,4 +1,3 @@
-import os
 import socket
 from accounts_system import Accounts_system
 from service_data import Service_data

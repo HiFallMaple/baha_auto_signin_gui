@@ -2,11 +2,8 @@ from datetime import time
 from data_processor import Data_processor
 from flask import Flask, url_for, request, redirect, render_template
 from baha import Baha, Baha_auto_signin
-from waitress import serve
 from baha_auto_signin_timer import Baha_auto_signin_timer
-import os
 import threading
-import time
 import webbrowser
 
 class Server:
@@ -16,7 +13,6 @@ class Server:
         pass
 
     def __flask_init(self) -> None:
-        self.app.secret_key = os.urandom(64)
         self.app.jinja_env.auto_reload = True
         self.app.config['TEMPLATES_AUTO_RELOAD'] = True
         return None
@@ -26,8 +22,6 @@ class Server:
             # serve(self.app, host="0.0.0.0", port=data_processor.get_port())
             self.app.run(host='0.0.0.0', threaded=True, port=data_processor.get_port())
         return None
-
-
 
 
 baha_auto_signin = Baha_auto_signin()

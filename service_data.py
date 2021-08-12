@@ -1,6 +1,6 @@
 import json
 import codecs
-import os
+from pathlib import Path
 
 class Service_data:
     def __init__(self) -> None:
@@ -12,7 +12,7 @@ class Service_data:
         pass
 
     def get_port(self) -> int or False:
-        if os.path.isfile(self.PORT_FILE_NAME) is True:
+        if Path(self.PORT_FILE_NAME).is_file() is True:
             with open(self.PORT_FILE_NAME, encoding=self.ENCODING) as f:
                 port = int(f.readline())
             return port
@@ -20,7 +20,7 @@ class Service_data:
             return False
 
     def get_time(self) -> list or False:
-        if os.path.isfile(self.TIME_JSON_FILE_NAME) is True:
+        if Path(self.TIME_JSON_FILE_NAME).is_file() is True:
             return json.load(open(self.TIME_JSON_FILE_NAME,))
         else: 
             return False
