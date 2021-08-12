@@ -15,27 +15,27 @@
 
 ## 安裝教學
 
-前往[release](https://github.com/tony53517230/baha_auto_signin_gui/releases)頁面下載最新版 `.exe` 安裝檔後執行，並根據引導進行安裝，下方為安裝流程示意圖
+前往[release](https://github.com/tony53517230/baha_auto_signin_gui/releases)頁面下載最新版 `.exe` 安裝檔後執行，並根據引導進行安裝，下方為安裝流程示意圖<br><br>
 
-![選擇語言](img/選擇語言.png)
 
+![選擇語言](img/選擇語言.png)<br>
 ↑↑↑此語言僅限安裝流程時的語言，預設點擊確認就行<br><br>
 
 
 
-![選擇資料夾](img/選擇資料夾.png)
+![選擇資料夾](img/選擇資料夾.png)<br>
 ↑↑↑選擇安裝資料夾，建議預設即可<br><br>
 
-![附加選項](img/附加選項.png)
+![附加選項](img/附加選項.png)<br>
 ↑↑↑選擇是否開機自啟動與建立桌面圖示，建議開啟開機自啟動<br><br>
 
-![準備安裝](img/準備安裝.png)
+![準備安裝](img/準備安裝.png)<br>
 ↑↑↑顯示準備安裝項目，點擊安裝<br><br>
 
-![正在安裝](img/正在安裝.png)
+![正在安裝](img/正在安裝.png)<br>
 ↑↑↑等待安裝完成<br><br>
 
-![安裝完成](img/安裝完成.png)
+![安裝完成](img/安裝完成.png)<br>
 ↑↑↑安裝完成後結束安裝，啟動設置介面<br><br>
 
 ## 啟動程式
