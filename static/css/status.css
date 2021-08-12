@@ -1,0 +1,23 @@
+
+.status_box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height: auto;
+  /* min-height: 400px; */
+  flex-wrap: wrap;
+}
+
+.status{
+  border: 2px rgb(179, 179, 179) solid;
+  border-radius: 10px;
+  min-width: 180px;
+  height: 120px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-shadow: rgb(58, 58, 58) 0.1em 0.1em 0.4em;
+}

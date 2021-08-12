@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Auto Baha-{% block title %}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="icon" href="{{ url_for('static', filename='images/AutoBahaMin.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/AutoBahaMin.ico') }}" type="image/x-icon">
+    <!-- STYLE CSS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+    {% block css %}{% endblock %}
+
+<body>
+    <div class="wrapper">
+        <div class="title_bar">
+            <div class="title_bar_inner">
+                <div><img src="{{ url_for('static', filename='images/AutoBaha.svg') }}">巴哈自動簽到系統</div>
+                <a href="setting">設定</a>
+                <a href="status">簽到狀態</a>
+            </div>
+        </div>
+        <div class="inner">
+            {% block inner %}{% endblock %}
+        </div>
+    </div>
+    <footer>
+        <p>Copyright © 2021 FallMaple. All rights reserved.</p>
+    </footer>
+
+</body>
+
+{% block js %}{% endblock %}
+
+</html>

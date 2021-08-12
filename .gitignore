@@ -1,0 +1,5 @@
+baha_auto_signin_gui_venv/
+__pycache__/
+accounts.json
+status.json
+*.pkl

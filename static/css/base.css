@@ -1,0 +1,135 @@
+body {
+    display: grid;
+    /*使用grid排版*/
+    grid-template-rows: 1fr auto;
+    /*將上半部設置為一個單位，剩下的部分設為自動高度*/
+}
+
+html, body {
+    min-height: 100%;
+    margin: 0;
+    font-family: "Play", "Noto Sans TC", sans-serif;
+    height: 100%;
+    background-image: url('../images/background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.title_bar {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    height: auto;
+}
+
+.title_bar_inner {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 250px 130px 130px auto;
+    width: 850px;
+    transition: 0.5s;
+    /*將上半部設置為一個單位，剩下的部分設為自動高度*/
+}
+
+.title_bar_inner>div {
+    float: left;
+    background-color: #408cf0;
+    color: white;
+    min-height: 100%;
+    /* text-shadow: rgb(51, 51, 51) 0.1em 0.1em 0.4em; */
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 800;
+    /* padding: 15px; */
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.title_bar_inner div img {
+    width: 45px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.title_bar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    line-height: 30px;
+    padding: 14px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 800;
+    /* height: 50px; */
+}
+
+.title_bar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.title_bar a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.inner {
+    padding: 50px;
+    padding-top: 1px;
+    padding-bottom: 30px;
+    /* min-width: 300px; */
+    max-width: 750px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: rgba(24, 24, 24, 0.527);
+    color: white;
+    border-radius: 5px;
+    border: rgb(175, 175, 175);
+    backdrop-filter: blur(10px);
+    transition: 1s;
+}
+
+@media screen and (max-width: 950px) {
+    .title_bar_inner {
+        margin-top: 0px;
+        width: 100%;
+        transition: 0.5s;
+    }
+    .inner {
+        margin: auto;
+        max-width: 100%;
+        border-radius: 0px;
+        transition: 1s;
+    }
+}
+
+.inner h3 {
+    text-align: center;
+    font-size: 30px;
+    text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+.inner p {
+    text-align: center;
+    font-size: 20px;
+    /* font-weight: 700; */
+    color: rgb(230, 230, 230);
+    text-shadow: black 0.1em 0.1em 0.4em;
+}
+
+footer {
+    color: rgb(184, 184, 184);
+    background-color: rgba(94, 94, 94, 0.521);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-row-start: 2;
+    /*欄位從第二條橫線開始*/
+    grid-row-end: 3;
+    /*欄位從第三條橫線結束*/
+}

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}設定{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/setting.css') }}">
+{% endblock %}
+
+{% block inner %}
+<h3>設定</h3>
+<p>帳號密碼請輸入在同一欄位，並以空格隔開，範例：account passwd<br>時間格式為24時制（時:分:秒）以半形冒號隔開，範例：24:00:00</p>
+<!-- <br /> -->
+<form action="" method="POST" id="port">
+	<div class="txt_field">
+		<input type="text" name="port" required>
+		<span></span>
+		<label>Port</label>
+	  </div>
+	<button class="btn41-43 btn-42" type="submit" form="port" value="Submit">儲存</button>
+</form>
+<form action="" method="post" id="setting">
+	<div class="setting">
+		<div>
+			<div id="time">
+				</label>
+			</div>
+			<button type="button" class="add_botton btn41-43 btn-42"
+				onclick="add_input('beforeend', 'time', '')">ADD</button>
+		</div>
+		<div>
+			<div id="account">
+			</div>
+			<button type="button" class="ADD_botton btn41-43 btn-42"
+				onclick="add_input('beforeend', 'account', '')">ADD</button>
+		</div>
+	</div>
+	<button class="btn41-43 btn-42" type="submit" form="setting" value="Submit">儲存帳密與時間</button>
+</form>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='js/setting.js') }}"></script>
+{% endblock %}
