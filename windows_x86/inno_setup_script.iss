@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "巴哈自動簽到系統"
-#define MyAppVersion "0.1.0_Beta"
+#define MyAppVersion "0.1.0_Beta.1"
 #define MyAppPublisher "FallMaple"
 #define MyAppURL "https://github.com/tony53517230/baha_auto_signin_gui"
 #define MyAppExeName "run.vbs"
@@ -10,7 +10,7 @@
 #define MyAppAssocExt ".myp"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 #ifndef Version
-  #define Version = '0.1.0.0';
+  #define Version = '0.1.0.1';
 #endif
 
 [Setup]
@@ -27,12 +27,12 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={autopf}\{#MyAppName}
 ChangesAssociations=yes
 DisableProgramGroupPage=yes
-LicenseFile=C:\Users\tony5\baha\LICENSE.md
+LicenseFile=E:\homework\python\baha_auto_signin_gui\LICENSE.md
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
 ;PrivilegesRequired=lowest
-OutputDir=C:\Users\tony5\compile
-OutputBaseFilename=AutoBahaInstaller_win_x64_v0.1.0_Beta
-SetupIconFile=C:\Users\tony5\baha\AutoBaha.ico
+OutputDir=E:\homework\python\baha_auto_signin_gui\windows_x86
+OutputBaseFilename=AutoBahaInstaller_win_x64_v0.1.0_Beta.1
+SetupIconFile=E:\homework\python\baha_auto_signin_gui\static\images\AutoBaha.ico
 UninstallDisplayIcon={app}\AutoBaha.ico
 Compression=lzma
 SolidCompression=yes
@@ -48,22 +48,22 @@ Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{
 Name: "startupicon"; Description: "開機啟動"; GroupDescription: "{cm:AdditionalIcons}"; 
 
 [Files]
-Source: "C:\Users\tony5\baha\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\log.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\port"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\service_data.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\time.json"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\time_is_changed"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\python\*"; DestDir: "{app}\python"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\tony5\baha\static\*"; DestDir: "{app}\static"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\tony5\baha\templates\*"; DestDir: "{app}\templates"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\tony5\baha\accounts_system.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\app.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\AutoBaha.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\baha.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\baha_auto_signin_timer.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\crawler.py"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\tony5\baha\data_processor.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\windows_x86\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\log.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\port"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\service_data.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\time.json"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\time_is_changed"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\windows_x86\python\*"; DestDir: "{app}\python"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "E:\homework\python\baha_auto_signin_gui\static\*"; DestDir: "{app}\static"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "E:\homework\python\baha_auto_signin_gui\templates\*"; DestDir: "{app}\templates"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "E:\homework\python\baha_auto_signin_gui\accounts_system.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\app.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\static\images\AutoBaha.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\baha.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\baha_auto_signin_timer.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\crawler.py"; DestDir: "{app}"; Flags: ignoreversion
+Source: "E:\homework\python\baha_auto_signin_gui\data_processor.py"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

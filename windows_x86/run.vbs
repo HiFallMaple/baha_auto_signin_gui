@@ -1,2 +1,2 @@
 Set shell = CreateObject("Shell.Application")
-shell.ShellExecute "python.exe", "app.py", , "runas", 0
+shell.ShellExecute "python\python.exe", "app.py", , "runas", 0

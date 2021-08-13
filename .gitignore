@@ -6,3 +6,5 @@ accounts.json
 status.json
 *.pkl
 *.spec
+windows_x86/python/
+.vscode/
