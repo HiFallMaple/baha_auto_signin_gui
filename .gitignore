@@ -8,3 +8,4 @@ status.json
 *.spec
 windows_x86/python/
 .vscode/
+test.py

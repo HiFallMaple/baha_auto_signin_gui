@@ -20,7 +20,7 @@ class Server:
     def run_server_forever(self) -> None:
         while True:
             # serve(self.app, host="0.0.0.0", port=data_processor.get_port())
-            self.app.run(host='0.0.0.0', threaded=True, port=data_processor.get_port())
+            self.app.run(host='localhost', threaded=True, port=data_processor.get_port())
         return None
 
 
