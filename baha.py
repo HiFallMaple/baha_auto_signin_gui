@@ -50,13 +50,21 @@ class Baha():
     def is_login(self) -> bool:
         response = self.reqs.get('https://home.gamer.com.tw/homeindex.php', headers = self.MAIN_HEADERS)
         soup = BeautifulSoup(response.text, 'html.parser')
+        
         ul = soup.find("ul", class_="MSG-mydata1")
         if ul is not None:
             li = ul.find("li")
             web_account = li.find("span").text
             return self.account["uid"] == web_account
-        else:
-            return False
+            
+        div = soup.find("div", class_="header_info-small")
+        if div is not None:
+            import re
+            small = div.find("small")
+            web_account = re.sub(r"^ID：", "", small.text)
+            return self.account["uid"] == web_account
+        return False
+
 
     def signin(self) -> dict:
         signin_status = self.get_signin_status()
